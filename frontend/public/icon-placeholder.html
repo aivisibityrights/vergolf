@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <canvas id="canvas192" width="192" height="192"></canvas>
+  <canvas id="canvas512" width="512" height="512"></canvas>
+  <script>
+    // Icon 192x192
+    const ctx192 = document.getElementById('canvas192').getContext('2d');
+    ctx192.fillStyle = '#10b981';
+    ctx192.fillRect(0, 0, 192, 192);
+    ctx192.fillStyle = 'white';
+    ctx192.font = '120px Arial';
+    ctx192.textAlign = 'center';
+    ctx192.textBaseline = 'middle';
+    ctx192.fillText('⛳', 96, 96);
+    
+    // Icon 512x512
+    const ctx512 = document.getElementById('canvas512').getContext('2d');
+    ctx512.fillStyle = '#10b981';
+    ctx512.fillRect(0, 0, 512, 512);
+    ctx512.fillStyle = 'white';
+    ctx512.font = '320px Arial';
+    ctx512.textAlign = 'center';
+    ctx512.textBaseline = 'middle';
+    ctx512.fillText('⛳', 256, 256);
+    
+    // Right-click each canvas to save as PNG
+    console.log('Right-click each canvas and save as icon-192.png and icon-512.png');
+  </script>
+</body>
+</html>
