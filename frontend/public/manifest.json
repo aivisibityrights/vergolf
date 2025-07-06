@@ -1,23 +1,45 @@
 {
-  "name": "VerGolf - AI Golf Community",
+  "name": "VerGolf - Golf Booking Platform",
   "short_name": "VerGolf",
-  "description": "AI-Powered Golf Community Platform",
-  "theme_color": "#10b981",
-  "background_color": "#ffffff",
-  "display": "standalone",
-  "orientation": "portrait",
-  "scope": "/",
+  "description": "จองสนามกอล์ฟ หาเพื่อนออกรอบ แพลตฟอร์มกอล์ฟอันดับ 1 ของไทย",
   "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#16a34a",
+  "orientation": "portrait-primary",
+  "scope": "/",
   "icons": [
     {
       "src": "/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["sports", "lifestyle"],
+  "lang": "th",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "จองสนาม",
+      "short_name": "จอง",
+      "description": "จองสนามกอล์ฟ",
+      "url": "/booking",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "ค้นหาสนาม",
+      "short_name": "ค้นหา",
+      "description": "ค้นหาสนามกอล์ฟ",
+      "url": "/courses",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }

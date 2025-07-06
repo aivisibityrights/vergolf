@@ -1,15 +1,21 @@
-const withPWA = require('next-pwa')({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development'
-})
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ['cdn.prod.website-files.com'],
-  },
+  // เพิ่ม headers สำหรับ development
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: process.env.NODE_ENV === 'development' 
+              ? "default-src 'self' 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https://*.supabase.co https://aiverid-backend-production.up.railway.app"
+              : "default-src 'self'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co https://aiverid-backend-production.up.railway.app"
+          }
+        ]
+      }
+    ]
+  }
 }
 
-module.exports = withPWA(nextConfig)
+module.exports = nextConfig
